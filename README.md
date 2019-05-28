@@ -1,0 +1,160 @@
+# Python-
+一起来回顾一下Python基础吧~
+# 第一章：基础知识
+* 数和表达式
+  
+```PYTHON
+# 加法
+print(2 + 2)
+
+# 浮点数
+print(1 / 2)
+
+# 丢弃小数部分,向下圆整
+print(1 // 2)
+print(5.0 // 2.4)
+
+# 取余x % y 即为 x-((x//y)*y)
+print(10 % 3)
+print(2.75 % 0.5)
+print(10 % -3)
+print(-10 % -3)
+
+# 乘方
+print(2 ** 3)
+print(-3 ** 2)
+print((-3) ** 2)
+```
+
+-------
+
+* 变量
+变量是表示（或指向)特定值的名称，例如可以：
+
+```Python
+x = 3
+print(x * 2)
+```
+将值3赋给了变量x，变量赋值后可以在表达式中使用它。不同于其他一些语言,使用Python变量前必须给它赋值，因为Python没有默认值。
+
+**注意：在Python中，名称（标识符）只能够由字母和下划线（_）构成，不能够以数字打头。**
+
+-------
+* 获取用户输入
+input()
+input()函数返回的是文本或字符串的形式
+例如：
+
+```python
+>>>x = input("x = ")
+>>>y = input("y = ")
+>>>print(x + y)
+
+x = 2
+y = 5
+25
+```
+x+y显示的是两个字符的拼接，当要实现加法时可以：
+
+```python
+x = input("x = ")
+y = input("y = ")
+print(int(x) + int(y))
+```
+
+-------
+* if语句
+格式：
+
+```python
+if 1 == 2 :
+    print("一等于二")
+```
+
+-------
+* 函数
+函数`pow()`作用相当于乘方运算符(**)
+
+```python 
+print(2 ** 3)
+print(pow(2, 3))
+```
+函数就像小型程序，可以用来执行特定的操作。Python提供了很多的函数，可以用来完成很多任务。实际上也可以自己来编写函数，通常将`pow()`等标准函数成为内置函数。例如，`abs（）`计算绝对值`round（）`将浮点圆整至与之最接近的整数。
+
+```python   
+>>>abs(-10)
+10
+>>>round(2 / 3)
+1.0
+```
+`round（）`圆整到最接近的整数，并在两个整数一样近时圆整到偶数
+
+-------
+* 模块
+可将模块视为扩展，通过将其导入可以扩展Python的功能。
+向下圆整的函数`floor（）`在模块math中:
+
+```python
+>>>import math
+>>>math.floor（32.9）
+32
+```
+向上圆整函数`ceil（）`：
+
+```python
+>>>math.ceil(32.9)
+33
+```
+通过使用import的变种`from module import function`,可在调用函数时不指定模块前缀。
+事实上可以使用变量来引用函数：
+```python
+import math
+a = math.floor(32.9)
+b = math.floor
+print(b(2.6))
+print(a)
+```
+处理复数的模块`cmath`：
+```python
+import cmath
+print(cmath.sqrt(-1))
+```
+
+-------
+* 海龟绘图法`turtle()`
+
+```python
+import turtle
+turtle.pensize(2)
+turtle.bgcolor("black")
+colors = ["red", "yellow", "blue", "purple"]
+
+for x in range(300):
+    turtle.forward(2 * x)
+    turtle.color(colors[x % 4])
+    turtle.left(92)
+turtle.done() 
+```
+![-w356](media/15590193194086/15590276657576.jpg)
+
+* **一些函数**
+ 
+| abs(number) | 返回绝对值 |
+| --- | --- |
+| bytes(string, encoding[, errors] | 对指定的字符串进行编码，并以指定的方式处理错误 |
+| cmath.sqrt(number) | 返回平方根，可用于负数 |
+| float(object) | 将字符串或数字抓换为浮点数 |
+| help([object]) | 提供交互式帮助 |
+| input(prompt) | 以字符串的方式获取用户输入 |
+| int(object) | 将字符串或数转换为整数 |
+| math.ceil(number) | 以浮点数的方式返回向上圆整的结果 |
+| math.floor(number) | 以浮点数的方式返回向下圆整的结果 |
+| math.sqrt(number) | 返回平方根；不能用于负数 |
+| pow(x, y[, z]) | 返回x的y次方对z求模的结果 |
+| print(object, …) | 将提供的实参打印出来，并用空格分隔 |
+| repr(object) | 返回指定值的字符串表示 |
+| round(number[, ndigits]) | 四舍五入为指定的精度，正好为5时舍入到偶数 |
+| str() | 将指定的值转换为字符串  |
+
+
+-------
